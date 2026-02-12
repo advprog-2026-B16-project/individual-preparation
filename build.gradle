@@ -1,13 +1,15 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '4.0.2'
-	id 'io.spring.dependency-management' version '1.1.7'
-	id ("org.sonarqube") version "4.4.1.3373" // SonarCloud plugin
+	id 'pmd' // Added this: Necessary to use the pmd {} block below [cite: 522, 532]
+	id 'jacoco' // Highly recommended for SonarCloud to show code coverage [cite: 1104, 1105]
+	id 'org.springframework.boot' version '3.2.2' // Note: Use the version from your starter code
+	id 'io.spring.dependency-management' version '1.1.4'
+	id ("org.sonarqube") version "4.4.1.3373"
 }
 
 pmd {
-	isIgnoreFailures = false // Ensures CI fails if linter finds issues [cite: 109]
-	toolVersion = "7.0.0-rc4"
+	isIgnoreFailures = false // Ensures CI fails if linter finds issues
+	toolVersion = "7.0.0-rc4" // Required for Java 21 support [cite: 1429]
 }
 
 group = 'com.example'
