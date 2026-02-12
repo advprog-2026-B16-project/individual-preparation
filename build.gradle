@@ -8,7 +8,7 @@ plugins {
 }
 
 pmd {
-	isIgnoreFailures = false // Ensures CI fails if linter finds issues
+	ignoreFailures = false // Ensures CI fails if linter finds issues
 	toolVersion = "7.0.0-rc4" // Required for Java 21 support [cite: 1429]
 }
 
