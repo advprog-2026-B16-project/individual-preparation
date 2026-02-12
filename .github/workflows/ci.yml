@@ -2,7 +2,7 @@ name: Continuous Integration (CI)
 
 on:
   push:
-    branches: [main, ci-cd]
+    branches: [main, ci-cd, ci-cd-zafran]
   pull_request:
 
 jobs:
