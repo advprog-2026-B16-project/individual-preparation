@@ -7,6 +7,12 @@ plugins {
 	id ("org.sonarqube") version "4.4.1.3373"
 }
 
+sonarqube {
+	properties {
+		property "sonar.gradle.skipCompile", "true"
+	}
+}
+
 pmd {
 	ignoreFailures = false // Ensures CI fails if linter finds issues
 	toolVersion = "7.0.0-rc4" // Required for Java 21 support [cite: 1429]
