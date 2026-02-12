@@ -8,11 +8,11 @@ plugins {
 }
 
 sonarqube {
-	properties {
-		property "sonar.gradle.skipCompile", "true"
-	}
+    properties {
+        property "sonar.gradle.skipCompile", "true"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
-
 pmd {
 	ignoreFailures = false // Ensures CI fails if linter finds issues
 }
