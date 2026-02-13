@@ -21,7 +21,6 @@ public class ArithmeticUtility {
     }
 
     public double divide(double o1, double o2) {
-        // TODO: Implement me properly!
         double result = o1 / o2;
 
         return result;
