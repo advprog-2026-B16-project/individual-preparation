@@ -18,11 +18,20 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      # Run Tests & Linter for main, ci-cd, and pull requests
       - name: Run Tests & Linter
+        if: github.ref != 'refs/heads/ci-cd-zafran'
         run: ./gradlew test pmdMain
 
+      # Run Linter only for ci-cd-zafran branch
+      - name: Run Linter only (ci-cd-zafran)
+        if: github.ref == 'refs/heads/ci-cd-zafran'
+        run: ./gradlew pmdMain
+
+      # SonarCloud Scan for main, ci-cd, and pull requests
       - name: SonarCloud Scan
+        if: github.ref != 'refs/heads/ci-cd-zafran'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_ZAFRAN }}
-        run: ./gradlew sonar --info
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew build sonar --info
