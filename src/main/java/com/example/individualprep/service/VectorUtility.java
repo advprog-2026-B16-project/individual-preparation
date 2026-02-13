@@ -12,6 +12,12 @@ public class VectorUtility {
 
     public double[] subtract(double[] v1, double[] v2) {
         // TODO: Implement me properly!
+        double[] result = new double[v1.length];
+
+        for (int index = 0; index <= v1.length; index++) {
+            result[index] = v1[index] + v2[index];
+        }
+
         return new double[] { 0.0, 0.0, 0.0 };
     }
 
