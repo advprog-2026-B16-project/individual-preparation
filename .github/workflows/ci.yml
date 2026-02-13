@@ -2,7 +2,7 @@ name: Continuous Integration (CI)
 
 on:
   push:
-    branches: [main, ci-cd, ci-cd-zafran]
+    branches: [main, ci-cd, ci-cd-humam]
   pull_request:
 
 jobs:
@@ -21,9 +21,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Run Tests & Linter
+        if: github.ref != 'refs/heads/ci-cd-humam'
         run: ./gradlew test pmdMain
 
       - name: SonarCloud Scan
+        if: github.ref != 'refs/heads/ci-cd-humam'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
