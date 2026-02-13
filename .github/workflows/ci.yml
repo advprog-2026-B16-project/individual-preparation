@@ -18,6 +18,9 @@ jobs:
           distribution: "temurin'"
           java-version: "21"
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       # Run Tests & Linter for main, ci-cd, and pull requests
       - name : Run Tests & Linter
         if: github.ref !='refs/heads/ci-cd-iqbal'
