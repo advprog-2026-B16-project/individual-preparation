@@ -2,6 +2,8 @@ package com.example.individualprep.service;
 
 import org.springframework.stereotype.Service;
 
+import java.lang.Math.*;
+
 @Service
 public class ArithmeticUtility {
     
@@ -28,7 +30,6 @@ public class ArithmeticUtility {
     }
 
     public double exponent(double o1, int n) {
-        // TODO: Implement me properly!
-        return 0.0;
+        return Math.pow(o1, n);
     }
 }
