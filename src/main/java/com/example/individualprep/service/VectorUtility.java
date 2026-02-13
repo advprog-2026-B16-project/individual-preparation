@@ -26,7 +26,7 @@ public class VectorUtility {
             result[index] = v1[index] + v2[index];
         }
 
-        return new double[] { 0.0, 0.0, 0.0 };
+        return result;
     }
 
     public double[] multiply(double[] v1, int x) {
