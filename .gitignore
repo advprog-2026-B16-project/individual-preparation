@@ -35,3 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
+=======
+
+### Gemini CLI ###
+prompt
+>>>>>>> 2ea70fb74c5c028ac0fece7ac71c4c8ab1b6b799
