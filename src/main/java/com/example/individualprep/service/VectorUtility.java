@@ -23,8 +23,13 @@ public class VectorUtility {
     }
 
     public double[] multiply(double[] v1, int x) {
-        // TODO: Implement me properly!
-        return new double[] { 0.0, 0.0, 0.0 };
+        int vectorRefrenceLength = v1.length;
+        double[] result = new double[vectorRefrenceLength];
+
+        for (int index = 0; index < vectorRefrenceLength; index++) {
+            result[index] = v1[index] * x;
+        }
+        return result;
     }
     
     public double dotProduct(double[] v1, double[] v2) {
