@@ -1,5 +1,9 @@
 plugins {
 	id 'java'
+<<<<<<< HEAD
+	id 'org.springframework.boot' version '4.0.2'
+	id 'io.spring.dependency-management' version '1.1.7'
+=======
 	id 'pmd' // Added this: Necessary to use the pmd {} block below [cite: 522, 532]
 	id 'jacoco' // Highly recommended for SonarCloud to show code coverage [cite: 1104, 1105]
 	id 'org.springframework.boot' version '3.2.2' // Note: Use the version from your starter code
@@ -17,6 +21,7 @@ sonarqube {
 }
 pmd {
 	ignoreFailures = false // Ensures CI fails if linter finds issues
+>>>>>>> 2ea70fb74c5c028ac0fece7ac71c4c8ab1b6b799
 }
 
 group = 'com.example'
@@ -34,8 +39,13 @@ repositories {
 }
 
 dependencies {
+<<<<<<< HEAD
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+=======
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+>>>>>>> 2ea70fb74c5c028ac0fece7ac71c4c8ab1b6b799
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
