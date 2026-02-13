@@ -14,9 +14,7 @@ public class ArithmeticUtility {
 
     public double subtract(double o1, double o2) {
         // TODO: Implement me properly!
-        double result = o1 - o2;
-
-        return result;
+        return 0.0;
     }
 
     public double multiply(double o1, double o2) {
@@ -26,7 +24,9 @@ public class ArithmeticUtility {
 
     public double divide(double o1, double o2) {
         // TODO: Implement me properly!
-        return 0.0;
+        double result = o1 / o2;
+
+        return result;
     }
 
     public double exponent(double o1, int n) {
