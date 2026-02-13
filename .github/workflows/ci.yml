@@ -18,17 +18,17 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      # Run Tests & Linter for main, ci-cd, and pull requests
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Run Tests & Linter
         if: github.ref != 'refs/heads/ci-cd-erik'
         run: ./gradlew test pmdMain
 
-      # Run Linter only for ci-cd-erik branch
       - name: Run Linter only (ci-cd-erik)
         if: github.ref == 'refs/heads/ci-cd-erik'
         run: ./gradlew pmdMain
 
-      # SonarCloud Scan for main, ci-cd, and pull requests
       - name: SonarCloud Scan
         if: github.ref != 'refs/heads/ci-cd-erik'
         env:
